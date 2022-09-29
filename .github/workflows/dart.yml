@@ -1,12 +1,12 @@
-name: deploy
+name: web_app_todo
 
 on: #trigger on push & PR to this branch only
   push:
     branches:
-      - master
+      - main
   pull_request:
     branches:
-      - master
+      - main
 
 env:
   JAVA_VERSION: "12.x" #change this version if you want
@@ -51,7 +51,7 @@ jobs:
     name: Publish GH Pages
     needs: [build_web] #only trigger this, if the build_web job runs ok...
     env:
-      my_secret: ${{secrets.commit_secret}}
+      # my_secret: ${{secrets.commit_secret}}
     runs-on: ubuntu-latest #change it to another OS if you want
     steps:
       - uses: actions/checkout@v1
