@@ -37,7 +37,7 @@ jobs:
   build_web:
     name: Build for WEB
     needs: [flutter_test] #only trigger this, if the flutter_test job runs ok...
-    runs-on: macos-latest #change it to another OS if you want
+    runs-on: ubuntu-latest #change it to another OS if you want
     steps:
       - uses: actions/checkout@v2
       - uses: subosito/flutter-action@v1
@@ -52,7 +52,7 @@ jobs:
     needs: [build_web] #only trigger this, if the build_web job runs ok...
     env:
       # my_secret: ${{secrets.commit_secret}}
-    runs-on: macos-latest #change it to another OS if you want
+    runs-on: ubuntu-latest #change it to another OS if you want
     steps:
       - uses: actions/checkout@v1
       - uses: subosito/flutter-action@v1
