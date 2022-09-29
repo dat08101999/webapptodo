@@ -60,7 +60,7 @@ jobs:
           channel: ${{env.FLUTTER_CHANNEL}}
       - run: |
           flutter pub get
-          flutter build web --release
+          flutter build web
           cd build/web
           git init
           git config --global user.email conbo104@gmail.com #change to your e-mail
