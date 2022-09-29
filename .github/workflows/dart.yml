@@ -30,6 +30,7 @@ jobs:
           #2 - check if there are some warnings
           #3 - format all files at lib folder
       - run: |
+          dart --version
           flutter clean 
           flutter pub get 
           flutter analyze 
